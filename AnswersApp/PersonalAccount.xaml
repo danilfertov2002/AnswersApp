@@ -1,0 +1,59 @@
+﻿<Window x:Class="AnswersApp.PersonalAccount"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AnswersApp"
+        mc:Ignorable="d"
+        Title="Личный кабинет" Height="400" Width="1500" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="White"/>
+            <GradientStop Color="#FF00F9FF" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <DataGrid Name="UserTasks" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" Margin="266,74,676,29" SelectionChanged="UserTasks_SelectionChanged" Background="{x:Null}" BorderBrush="{x:Null}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название" Width="150" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Описание" Width="200" Binding="{Binding Description}"/>
+                <DataGridTextColumn Header="Статус" Width="90" Binding="{Binding IdStatusTaskNavigation.Name}"/>
+                <DataGridTextColumn Header="Дата" Width="90" Binding="{Binding DateOfPublication}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <TextBox HorizontalAlignment="Left" Margin="102,60,0,0" Text="{Binding SecondName}" TextWrapping="Wrap" VerticalAlignment="Top" Width="147" FontSize="16" Height="28" VerticalContentAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False" FontFamily="Arial"/>
+        <Label Content="Фамилия:" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Arial" FontWeight="Bold" Background="{x:Null}" Foreground="#FF8256FF"/>
+
+        <Label Content="Имя:" HorizontalAlignment="Left" Margin="51,96,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Arial" FontWeight="Bold" Foreground="#FF8256FF"/>
+        <TextBox HorizontalAlignment="Left" Margin="102,98,0,0" TextWrapping="Wrap" Text="{Binding FirstName}" VerticalAlignment="Top" Width="147" FontSize="16" FontFamily="Arial" Height="26" VerticalContentAlignment="Center" BorderBrush="{x:Null}" Background="{x:Null}" IsEnabled="False"/>
+
+        <Label Content="Отчество:" HorizontalAlignment="Left" Margin="8,135,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Arial" FontWeight="Bold" Foreground="#FF8256FF"/>
+        <TextBox HorizontalAlignment="Left" Margin="102,138,0,0" TextWrapping="Wrap" Text="{Binding MiddleName}" VerticalAlignment="Top" Width="147" FontSize="16" FontFamily="Arial" Height="26" VerticalContentAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
+
+        <Label Content="Телефон:" HorizontalAlignment="Left" Margin="14,175,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Arial" FontWeight="Bold" Foreground="#FF8256FF"/>
+        <TextBox HorizontalAlignment="Left" Margin="102,177,0,0" TextWrapping="Wrap" Text="{Binding NumberPhone}" VerticalAlignment="Top" Width="147" FontSize="16" FontFamily="Arial" Height="26" VerticalContentAlignment="Center" BorderBrush="{x:Null}" Background="{x:Null}" IsEnabled="False"/>
+        <Button Name="BackBtn" Content="" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Width="34" Height="32" Click="BackBtn_Click_1">
+            <Button.Background>
+                <ImageBrush ImageSource="/free-icon-back-button-6707324.png"/>
+            </Button.Background>
+        </Button>
+        <Label Content="Личный кабинет" HorizontalAlignment="Left" Margin="166,10,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" FontFamily="Arial" Background="{x:Null}">
+            <Label.Foreground>
+                <ImageBrush ImageSource="/bb1c7a0fa53e7ce134874f2945a99c96.jpg"/>
+            </Label.Foreground>
+        </Label>
+        <Label Content="Мои задания:" HorizontalAlignment="Left" Margin="466,33,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#FF8256FF"/>
+        <Button Name="HistoryBtn" Content="Выполненные задачи" HorizontalAlignment="Left" Margin="10,217,0,0" VerticalAlignment="Top" Width="220" Height="42" FontSize="20" Click="HistoryBtn_Click" Background="{x:Null}" BorderBrush="#FF8256FF" Foreground="#FF8256FF"/>
+        <DataGrid x:Name="UserTasks_Copy" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" Margin="904,74,31,29" SelectionChanged="UserTasks_SelectionChanged1" Background="{x:Null}" BorderBrush="{x:Null}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название" Width="150" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Описание" Width="200" Binding="{Binding Description}"/>
+                <DataGridTextColumn Header="Статус" Width="90" Binding="{Binding IdStatusTaskNavigation.Name}"/>
+                <DataGridTextColumn Header="Дата" Width="90" Binding="{Binding DateOfPublication}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Принятые задания:" HorizontalAlignment="Left" Margin="1105,33,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#FF8256FF"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,31 @@
+﻿<Window x:Class="AnswersApp.TaskWindowSearch"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AnswersApp"
+        mc:Ignorable="d"
+        Title="Откликнуться на задание" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
+    <Window.Background>
+        <ImageBrush ImageSource="/1613237100_76-p-fon-dlya-prezentatsii-svetlo-sinii-80.jpg"/>
+    </Window.Background>
+    <Grid>
+
+
+
+
+
+        <Button Name="BackBtn" Content="" Click="BackBtn_Click" Margin="20,15,723,366" BorderBrush="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="/free-icon-back-button-6707324.png"/>
+            </Button.Background>
+        </Button>
+        <Button Name="AcceptBtn" Content="Принять задание" Click="AcceptBtn_Click" Margin="290,340,290,31" Background="White" BorderBrush="#FF8256FF" Foreground="#FF8256FF" FontSize="18"/>
+
+        <TextBlock Text="{Binding Name}" TextWrapping="Wrap" FontFamily="Verdana" FontSize="20" FontWeight="Bold" Margin="208,62,208,296" Background="#FFD3FFFA"/>
+        <TextBlock Text="{Binding Description}" TextWrapping="Wrap" FontFamily="Verdana" FontSize="15" Margin="208,197,208,127" Background="#FFD3FFFA"/>
+        <Label Content="Название" HorizontalAlignment="Center" Margin="0,25,0,0" VerticalAlignment="Top" Foreground="#FF5F19FF" FontSize="18" FontWeight="Bold"/>
+        <Label Content="Описание" HorizontalAlignment="Center" Margin="0,152,0,0" VerticalAlignment="Top" Foreground="#FF5F19FF" FontSize="18" FontWeight="Bold"/>
+
+    </Grid>
+</Window>
